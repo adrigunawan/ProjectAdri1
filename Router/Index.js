@@ -1,13 +1,15 @@
+import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View, Text } from "react-native";
-import React from "react";
-
-export default function Router() {
+import HomeScreen from "../Screens/Home";
+import Gallery from "../Screens/Gallery";
+import Profile from "../Screens/Profile";
+const Stack = createNativeStackNavigator();
+export default function Index() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Gallery" component={GalleryScreen} />
-      <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="Gallery" component={Gallery} />
+      <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   );
 }
